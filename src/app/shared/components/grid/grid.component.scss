@@ -1,0 +1,50 @@
+.grid {
+  border-radius: 5px;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+}
+
+.grid th,
+.grid td {
+  padding: 15px;
+  border: 1px solid #f4f5f5;
+}
+
+.grid thead tr:nth-child(1) {
+  font-size: 16px;
+}
+
+.grid thead tr:nth-child(2),
+.grid tfoot tr {
+  background-color: #f4fcff;
+}
+
+.grid thead tr:not(:first-child) {
+  text-transform: uppercase;
+}
+
+.grid thead tr th {
+  border: 1px solid #f1f1f1;
+  font-weight: 500;
+}
+
+.column--link a {
+  color: black;
+}
+
+.column--link-icon {
+  margin-top: 2px;
+}
+
+.grid thead:first-child {
+  border-top-left-radius: 5px;
+}
+
+.grid tbody td {
+  opacity: 0.8;
+}
+
+.grid__footer {
+  font-weight: 600;
+}

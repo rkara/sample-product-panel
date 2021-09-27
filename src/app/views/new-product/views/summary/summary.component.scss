@@ -1,0 +1,67 @@
+.content {
+  overflow: auto;
+}
+
+.input-label {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+input {
+  height: 42px;
+  margin-top: 0;
+}
+
+.summary__upload-text {
+  font-size: 12px;
+  text-align: center;
+}
+
+.summary__upload-container {
+  text-align: center;
+  background-color: #F8F8F8;
+  width: 136px;
+  margin: 0 auto;
+  padding: 10px;
+  input[type="button"] {
+    font-size: 10px;
+    height: 21px;
+    width: 68px;
+    padding: 2px 4px;
+    margin-bottom: 15px;
+  }
+}
+
+.summary__upload-browse {
+  font-size: 10px;
+  padding: 18px 10px;
+  border-radius: 15px;
+  border: 2px dashed #E7EAED;
+}
+
+.panel {
+  display: block !important;
+}
+
+.panel__title {
+  display: block;
+}
+
+.panel__content {
+  display: block;
+}
+
+app-package-grid,
+app-cost-grid {
+  height: 350px;
+  display: block;
+  margin: 15px 0;
+}
+
+@media only screen and (max-width: 720px) {
+  .panel__content {
+    flex-direction: column !important;
+  }
+}

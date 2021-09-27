@@ -1,0 +1,9 @@
+<ng-container *ngIf="data$ | async as data">
+  <app-grid fxFlexFill [columns]="columns" [data]="data">
+    <app-grid-cell-template name="_actions">
+      <ng-template let-element="row">
+        <a class="column--actions" [routerLink]="['/new-product', productId, 'materials', element ? element.id : 0]">View More</a>
+      </ng-template>
+    </app-grid-cell-template>
+  </app-grid>
+</ng-container>

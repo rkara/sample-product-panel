@@ -1,0 +1,54 @@
+<div class="page" fxFlexFill fxLayout="row">
+  <div class="login__hero" fxFlex="50%" fxLayoutAlign="center center">
+    <div>
+      <h2 class="login__hero-text">Product Portal</h2>
+      <p class="login__hero-subtext">lorem ipsum Lorem ipsum...</p>
+      <input type="button" value="Read More" />
+    </div>
+  </div>
+  <div class="login__form-container" fxFlex>
+    <form
+      class="login__form"
+      [formGroup]="formGroup"
+      fxLayout="column"
+      fxLayoutGap="15px"
+    >
+      <h3 class="login__form-title">Hello Again!</h3>
+
+      <p class="login__form-subtitle">Welcome Back</p>
+
+      <div class="login__form-field">
+        <span class="login__form-field-icon iconify" data-icon="carbon:email"></span>
+        <input
+          class="input--rounded"
+          type="email"
+          placeholder="Email Address"
+          formControlName="email"
+        />
+      </div>
+
+      <div class="login__form-field">
+        <span class="login__form-field-icon iconify" data-icon="carbon:locked"></span>
+        <input
+          class="input--rounded"
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </div>
+
+      <input
+        class="login__button"
+        fxFlex="60px"
+        type="submit"
+        value="Log in"
+        [disabled]="!formGroup.valid"
+        (click)="onLoginButtonClick()"
+      />
+
+      <a class="login__forgot-password" routerLink="/forgot-password"
+        >Forgot Password</a
+      >
+    </form>
+  </div>
+</div>

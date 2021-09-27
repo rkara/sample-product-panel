@@ -1,1 +1,152 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --client-gray: rgb(54, 55, 64);
+  --client-gray-dark: rgb(27, 27, 27);
+  --client-brand-primary: rgb(44, 162, 209);
+  --client-brand-primary-70: rgb(44, 162, 209, .7);
+  --client-brand-primary-60: rgb(44, 162, 209, .6);
+  --client-brand-primary-50: rgb(44, 162, 209, .5);
+  --client-brand-primary-40: rgb(44, 162, 209, .4);
+  --client-brand-primary-30: rgb(44, 162, 209, .3);
+  --client-brand-primary-20: rgb(44, 162, 209, .2);
+  --client-brand-primary-10: rgb(44, 162, 209, .1);
+  --client-content-width: 1406px;
+}
+
+
+button,
+input[type="button"],
+input[type="submit"] {
+  height: 36px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 36px;
+  line-height: 18px;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  color: white;
+  background: var(--client-brand-primary);
+  border-radius: 50px;
+  transition: 0.3s ease all;
+  outline: none;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background: var(--client-brand-primary-70);
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+  background: transparentize(rgb(44, 162, 209), 0.2);
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled {
+  background: transparentize(desaturate(rgb(44, 162, 209), 90), 0.5);
+  box-shadow: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"] {
+  background-color: transparent;
+  border: 2px solid transparentize(#dcdcdc, .7);
+  border-radius: 5px;
+  height: 60px;
+  font-size: 16px;
+  line-height: 60px;
+  color: #777777;
+  padding: 0 18px;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="number"]::placeholder,
+input[type="date"]::placeholder {
+  opacity: 0.8;
+}
+
+input[type="text"].input--rounded,
+input[type="password"].input--rounded,
+input[type="email"].input--rounded,
+input[type="number"].input--rounded,
+input[type="date"].input--rounded {
+  border-radius: 50px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border: 1px solid darken(#dcdcdc, 40);
+}
+
+.select-field {
+  label {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  select {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid transparentize(#dcdcdc, .7);
+    border-radius: 5px;
+    height: 42px;
+    font-size: 16px;
+    line-height: 60px;
+    color: lighten(#777777, 20);
+    padding: 0 18px;
+  }
+}
+
+.page {
+  background-color: #F7F8FC;
+}
+
+.panel__container {
+  padding: 15px;
+}
+
+.panel {
+  background-color: white;
+  border: 1px solid #EEEFF4;
+  border-radius: 7px;
+  padding: 15px 42px;
+}
+
+.panel__title {
+  font-size: 18px;
+}
+
+.panel__content {
+  overflow: auto;
+}
+

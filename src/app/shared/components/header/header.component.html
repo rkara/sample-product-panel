@@ -1,0 +1,21 @@
+<div class="header" fxLayout="row" fxLayoutGap="10px">
+  <h2 class="header__title" fxFlex>{{ title }}</h2>
+  <span
+    class="header__icon iconify"
+    data-icon="carbon:search"
+    aria-label="Search"
+  ></span>
+  <span class="header__icon iconify" data-icon="carbon:notification-new"></span>
+  <div class="header__divider"></div>
+  <ng-container *ngIf="user$ | async as user">
+    <span class="header__user-name">{{ user.name }}</span>
+    <div class="header__user-photo-container">
+      <img
+        class="header__user-photo"
+        *ngIf="user.photoUri"
+        [src]="user.photoUri"
+      />
+      <div class="header__user-photo-background"></div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,63 @@
+<table class="grid">
+  <thead *ngIf="columns">
+    <tr *ngFor="let collection of columns">
+      <th
+        class="column"
+        *ngFor="let column of collection"
+        [attr.colspan]="column.colspan"
+        [class.column--link]="column.route"
+      >
+        <div
+          fxLayout="row"
+          fxLayoutGap="5px"
+          *ngIf="column.route; else headerTmpl"
+        >
+          <a [routerLink]="column.route">{{ column.name }}</a>
+          <div class="column--link-icon">
+            <span
+              class="iconify"
+              data-icon="fluent:window-new-20-regular"
+            ></span>
+          </div>
+        </div>
+
+        <ng-template #headerTmpl>
+          {{ column.name }}
+        </ng-template>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of data">
+      <td *ngFor="let column of displayColumns">
+        <ng-container *ngIf="column && column.key">
+          <ng-container *ngIf="column.template; else standardTmpl">
+            <ng-template
+              [ngTemplateOutlet]="column.template"
+              [ngOutletContext]="{ row: element }"
+            ></ng-template>
+          </ng-container>
+
+          <ng-template #standardTmpl>
+            <ng-container *ngIf="element && element[column.key]">
+              {{ element[column.key] }}
+            </ng-container>
+          </ng-template>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td class="grid__footer" [attr.colspan]="displayColumns.length">
+        <div fxLayoutAlign="end" fxLayout="row" *ngIf="data" fxLayoutGap="15px">
+          <span>Rows per page: {{ data.length }}</span>
+          <span>1 - {{ data.length }} of 1</span>
+
+          <span class="iconify" data-icon="grommet-icons:previous"></span>
+          <span class="iconify" data-icon="grommet-icons:next"></span>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>

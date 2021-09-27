@@ -1,0 +1,67 @@
+.header {
+  display: block;
+  height: 100%;
+  line-height: 72px;
+  padding: 0 15px;
+}
+
+.header__title {
+  color: #2ca2d1;
+  margin: 0;
+  padding: 0 0 0 15px;
+  font-size: 20px;
+}
+
+.header__icon {
+  line-height: 72px;
+  padding: 24px 0;
+  font-size: 24px;
+  width: 42px;
+  height: 72px;
+  color: #c5c7cd;
+  transition: 0.3s ease all;
+  cursor: pointer;
+}
+
+.header__icon:hover {
+  color: darken(#c5c7cd, 15);
+}
+
+.header__divider {
+  background-color: #c5c7cd;
+  height: 36px;
+  width: 2px;
+  margin: auto 10px;
+}
+
+.header__user-photo-container {
+  height: 46px;
+  width: 46px;
+  padding: 15px 10px 15px 0;
+  position: relative;
+}
+
+.header__user-photo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid white;
+  z-index: 2;
+  position: absolute;
+}
+
+.header__user-photo-background {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: -2px;
+  top: 13px;
+  border-radius: 50%;
+  background-color: #EBECF3;
+  z-index: 1;
+}
+
+.header__user-name {
+  font-weight: 500;
+  font-size: 16px;
+}

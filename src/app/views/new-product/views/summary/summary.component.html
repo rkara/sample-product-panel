@@ -1,0 +1,184 @@
+<div class="page summary" fxFlexFill fxLayout="row">
+  <app-navigation></app-navigation>
+  <div class="content" fxFlex fxLayout="column">
+    <app-header title="Admin View"></app-header>
+    <div class="panel__container" fxFlex>
+      <div class="panel" fxFlexFill>
+        <h2 class="panel__title">Create a new Product</h2>
+        <form
+          [formGroup]="formGroup"
+          class="panel__content"
+          fxFlex
+          fxLayout="row"
+          fxLayoutGap="10px"
+          *ngIf="metaData$ | async as metadata"
+        >
+          <div fxFlex="25%" fxLayout="column" fxLayoutGap="10px">
+            <div class="select-field">
+              <label for="industryCategory">Industry Category</label>
+
+              <select id="industryCategory" formControlName="industryCategory">
+                <option value="" disabled>Select</option>
+                <option
+                  *ngFor="let item of metadata.productTypes"
+                  [value]="item.id"
+                >
+                  {{ item.description }}
+                </option>
+              </select>
+            </div>
+
+            <div class="select-field">
+              <label for="productTemplate">Product Template</label>
+
+              <select id="productTemplate" formControlName="productTemplate">
+                <option value="" disabled>Select</option>
+                <option value="-1">
+                  Create a new Product Template
+                </option>
+                <option
+                  *ngFor="let item of metadata.productTemplates"
+                  [value]="item.id"
+                >
+                  {{ item.description }}
+                </option>
+              </select>
+            </div>
+
+            <div class="select-field">
+              <label for="weight">Weight</label>
+
+              <select id="weight" formControlName="weight">
+                <option value="" disabled selected>Select</option>
+              </select>
+            </div>
+
+            <div class="select-field">
+              <label for="cost">Cost</label>
+
+              <select id="cost" formControlName="cost">
+                <option value="" disabled selected>Select</option>
+              </select>
+            </div>
+
+            <div class="select-field">
+              <label for="surfaceArea">Surface Area</label>
+
+              <select id="surfaceArea" formControlName="surfaceArea">
+                <option value="" disabled selected>Select</option>
+              </select>
+            </div>
+          </div>
+
+          <div fxFlex="25%" fxLayout="column" fxLayoutGap="10px">
+            <div class="select-field">
+              <label for="productCategory">Product Category</label>
+
+              <select id="productCategory" formControlName="productCategory">
+                <option value="" disabled>Select</option>
+                <option
+                  *ngFor="let item of metadata.productTypes"
+                  [value]="item.id"
+                >
+                  {{ item.description }}
+                </option>
+              </select>
+            </div>
+
+            <div class="select-field">
+              <label for="productSubType">Product Subtype</label>
+
+              <select id="productSubType" formControlName="productSubType">
+                <option value="" disabled>Select</option>
+                <option
+                  *ngFor="let item of metadata.productTypes"
+                  [value]="item.id"
+                >
+                  {{ item.description }}
+                </option>
+              </select>
+            </div>
+
+            <label for="prefix" class="input-label">Prefix</label>
+            <input type="text" id="prefix" formControlName="prefix" />
+
+            <div class="select-field">
+              <label for="productWeightCalculator"
+                >Product Weight Calculator</label
+              >
+
+              <select
+                id="productWeightCalculator"
+                formControlName="productWeightCalculator"
+              >
+                <option value="" disabled selected>Select</option>
+              </select>
+            </div>
+
+            <label for="lengthCtrl" class="input-label">Size</label>
+            <input
+              type="number"
+              id="lengthCtrl"
+              formControlName="length"
+              placeholder="length"
+              aria-label="Length"
+            />
+
+            <input
+              type="number"
+              formControlName="width"
+              placeholder="width"
+              aria-label="Width"
+            />
+          </div>
+
+          <div fxFlex="25%" fxLayout="column" fxLayoutGap="10px">
+            <div class="select-field">
+              <label for="productType">Product Type</label>
+
+              <select id="productType" formControlName="productType">
+                <option value="" disabled>Select</option>
+                <option
+                  *ngFor="let item of metadata.productTypes"
+                  [value]="item.id"
+                >
+                  {{ item.description }}
+                </option>
+              </select>
+            </div>
+
+            <label for="hsnCode" class="input-label">HSN Code</label>
+            <input
+              type="number"
+              id="hsnCode"
+              formControlName="hsnCode"
+              placeholder="HSN Code"
+            />
+
+            <label for="productCode" class="input-label">Product Code</label>
+            <input
+              type="number"
+              id="productCode"
+              formControlName="productCode"
+              placeholder="Product Code"
+            />
+          </div>
+
+          <div fxFlex="25%" fxLayout="column" fxLayoutGap="10px">
+            <p class="summary__upload-text">Upload Product Picture</p>
+            <div class="summary__upload-container">
+              <input type="button" value="New Upload" />
+              <div class="summary__upload-browse">
+                Click to browse or drag and drop your files
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <app-package-grid [productId]="-1"></app-package-grid>
+
+        <app-cost-grid [productId]="-1"></app-cost-grid>
+      </div>
+    </div>
+  </div>
+</div>
